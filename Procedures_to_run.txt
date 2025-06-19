@@ -1,0 +1,20 @@
+Open terminal in your project folder.
+Activate virtual environment:
+PowerShell (admin):
+powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+.\venv\Scripts\Activate.ps1
+CMD:
+venv\Scripts\activate.bat
+Install dependencies:
+pip install flask pandas scikit-learn joblib numpy
+Train your model:
+python train_model.py
+Run the web app:
+python app.py
+Visit ‑ http://127.0.0.1:5000, fill the form, and submit to see the prediction!
+
+When training your model using train_model.py, a long execution time is usually caused by:
+Very large dataset (the Kaggle dataset has ~6.3 million rows).
+RandomForestClassifier with many trees (n_estimators=100 or more).
+No sampling or filtering, so it uses all data.
